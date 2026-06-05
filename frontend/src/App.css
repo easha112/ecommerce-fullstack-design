@@ -1,0 +1,87 @@
+:root {
+  --primary: #ffb703;
+  --dark: #0f0f0f;
+  --card: #1a1a1a;
+  --text: #ffffff;
+  --muted: #b3b3b3;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--dark);
+  color: var(--text);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #000;
+  border-bottom: 1px solid #222;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+/* Hero */
+.hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #000, #111);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: var(--primary);
+}
+
+.hero p {
+  color: var(--muted);
+}
+
+/* Products */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  background: var(--card);
+  padding: 15px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.btn {
+  background: var(--primary);
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+}
