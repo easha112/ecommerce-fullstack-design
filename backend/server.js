@@ -1,10 +1,35 @@
-const express = require("express");
+const express = require('express');
+const cors = require('cors');
+require('dotenv').config();
+
+const connectDB = require('./config/db');
+
+const productRoutes = require('./routes/productRoutes');
+const authRoutes = require('./routes/authRoutes');
+
 const app = express();
 
-app.get("/", (req,res)=>{
-  res.send("Backend Running");
+connectDB();
+
+app.use(cors({
+ origin:'http://localhost:3000',
+ credentials:true
+}));
+
+app.use(express.json());
+
+
+app.use('/api/products', productRoutes);
+app.use('/api/users', authRoutes);
+
+
+app.get('/',(req,res)=>{
+ res.send("Backend Server Running");
 });
 
-app.listen(5000, ()=>{
-  console.log("Server Started");
+
+const PORT=5000;
+
+app.listen(PORT,()=>{
+ console.log(`Server running on ${PORT}`);
 });
